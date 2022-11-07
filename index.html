@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Lev3_1_projekt_js-vertiefung_mehrwertsteuer-rechner</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="wrapper">
+        <h1>Mehrwertsteuer-Rechner</h1>
+        <form onsubmit="calc(event)">
+          <div class="group">
+            <fieldset>
+              <legend>Was soll berechnet werden?</legend>
+              <div class="row">
+                <input
+                  type="radio"
+                  name="input-checkbox-mwst"
+                  id="input-checkbox-mwst-add"
+                  checked
+                  onchange="checkInput(event)" />
+                <label for="input-checkbox-mwst-add"
+                  >Mehrwertsteuer aufschlagen (Netto zu Brutto)</label
+                >
+              </div>
+              <div class="row">
+                <input
+                  type="radio"
+                  name="input-checkbox-mwst"
+                  id="input-checkbox-mwst-sub"
+                  onchange="checkInput(event)" />
+                <label for="input-checkbox-mwst-sub"
+                  >Mehrwertsteuer abziehen (Brutto zu Netto)</label
+                >
+              </div>
+            </fieldset>
+          </div>
+          <div class="group">
+            <fieldset>
+              <legend>Mehrwertsteuersatz</legend>
+              <div class="row">
+                <input
+                  type="radio"
+                  name="input-checkbox-perc"
+                  id="input-checkbox-19perc"
+                  checked
+                  onchange="checkInput(event)" />
+                <label for="input-checkbox-19perc">19 %</label>
+                <input
+                  type="radio"
+                  name="input-checkbox-perc"
+                  id="input-checkbox-7perc"
+                  onchange="checkInput(event)" />
+                <label for="input-checkbox-7perc">7 %</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="group">
+            <fieldset>
+              <legend id="result-desc">Nettobetrag (Preis ohne Mehrwertsteuer) in Euro</legend>
+              <div class="row">
+                <input type="number" name="input-amount" id="input-amount" required />
+              </div>
+            </fieldset>
+          </div>
+          <div class="button-container">
+            <button type="submit" class="button">Berechnen</button>
+            <button type="button" class="button button--delete" onclick="resetForm(event)">
+              Löschen
+            </button>
+          </div>
+          <div class="result">
+            <p class="row">Ergebnis</p>
+            <div class="group">
+              <div>
+                <p class="row">Mehrwertsteuerbetrag</p>
+                <p id="result-mwst" class="row bold">---</p>
+              </div>
+            </div>
+            <div class="group">
+              <p id="result-type" class="row">Bruttobetrag (Endpreis)</p>
+              <p id="result-value" class="row bold">---</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
