@@ -61,7 +61,7 @@ button {
   padding-block: 1rem;
 }
 .wrapper {
-  max-width: 450px;
+  max-width: min(80%, 450px);
   margin: 0 auto;
 }
 .button-container {
